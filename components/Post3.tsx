@@ -23,7 +23,7 @@ const Posts: React.FC<PostProps> = ({ pimg, pheading , articleNumber}) => {
   return (
     <div className="flex  space-x-4 py-2 px-2">
   {/* Image on the left */}
-  <div className="flex-shrink-0 w-24 h-24 overflow-hidden ">
+  <div className="flex-shrink-0  w-24 h-24 overflow-hidden ">
     <Image
       src={pimg}
       className="object-cover w-full h-full"

@@ -2,18 +2,38 @@ import allArticles from "@/constants/all";
 import Image from "next/image";
 import Link from "next/link";
 import CreationDate from "@/components/Date";
-import Post3 from "@/components/Post3";
+import { Metadata } from "next";
 import money from "@/constants/money";
+import Post3 from "@/components/Post3";
 
 
+
+// Format author name to URL-safe slug
 const formatName = (name: string) =>
   name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
-const AuthorPage = async ({
-  params,
-}: {
-  params: Promise<{ authorName: string }>;
-}) => {
+// Generate static paths for all authors
+export async function generateStaticParams() {
+  const uniqueAuthors = Array.from(
+    new Set(allArticles.map((article) => formatName(article.authorName)))
+  );
+
+  return uniqueAuthors.map((authorName) => ({ authorName }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ authorName: string }> }): Promise<Metadata> {
+  const { authorName } = await params;
+
+  const author = allArticles.find(
+    (article) => formatName(article.authorName) === authorName
+  );
+
+  return {
+    title: author ? `Articles by ${author.authorName}` : 'Author Not Found',
+  };
+}
+
+const AuthorPage = async ({ params }: { params: Promise<{ authorName: string }> }) => {
   const { authorName } = await params;
 
   const authorArticles = allArticles.filter(
@@ -22,7 +42,6 @@ const AuthorPage = async ({
 
   if (authorArticles.length === 0) {
     return (
-        
       <div className="mt-20 text-center text-3xl font-bold text-gray-800">
         Author Not Found
       </div>
@@ -124,7 +143,7 @@ const AuthorPage = async ({
           passHref
         >
           
-            <div className="bg-gray-100 rounded-lg shadow-sm p-3">
+            <div className="bg-gray-100 mb-4 rounded-lg shadow-sm p-3">
               <Post3
                 pimg={`/articles/${post.imgUrl}`}
                 pheading={post.title}

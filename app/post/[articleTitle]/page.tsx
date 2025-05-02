@@ -32,6 +32,44 @@ export function generateStaticParams(): { articleTitle: string }[] {
   }));
 }
 
+// Metadata generation function, synchronously
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ articleTitle: string }>;
+}) {
+  const { articleTitle } = await params;
+  const article = allArticles.find(
+    ({ title }) => formatTitle(title) === articleTitle
+  );
+ 
+  if (!article) {
+    return {
+      title: "Article Not Found",
+      description: "No article found for the given title",
+    };
+  }
+ 
+  const description = article.contents.at(-1) || "";
+ 
+  return {
+    title: article.title,
+    description,
+    openGraph: {
+      url: `/${articleTitle}`,
+      title: article.title,
+      description,
+      images: [`/article/${article.imgUrl}`],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description,
+      images: [`/article/${article.imgUrl}`],
+    },
+  };
+}
+
 const PostPage = async ({
   params,
 }: {

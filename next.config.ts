@@ -1,10 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images: {
-    domains: ['img.mensxp.com' , 'images.pexels.com' , 'c4.wallpaperflare.com', 'www.thegroomingclinic.com' , 'images.unsplash.com'], 
-    
-  },
+ output: "export",
+  images: { unoptimized: true } 
 };
 
 export default nextConfig;
+
