@@ -27,8 +27,8 @@ const Posts: React.FC<PostProps> = ({ pimg, pheading , articleNumber}) => {
     <Image
       src={pimg}
       className="object-cover w-full h-full"
-      width={100}
-      height={100}
+      width={1000}
+      height={1000}
       alt="Post Image"
       title="Post"
     />

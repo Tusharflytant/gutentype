@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import CreationDate from "@/components/Date";
 import { Metadata } from "next";
-import money from "@/constants/money";
+import money from "@/constants/consumerprotection";
 import Post3 from "@/components/Post3";
-
+import Outbrain from "@/components/ads/outbrain";
 
 
 // Format author name to URL-safe slug
@@ -102,6 +102,12 @@ const AuthorPage = async ({ params }: { params: Promise<{ authorName: string }> 
             href={`/post/${post.title.replace(/[^A-Za-z0-9]+/g, "-")}`}
             className="block"
           >
+               {index ===2 && (
+             <aside className="max-w-7xl mb-10  mt-30 mx-auto">
+        <div className="OUTBRAIN outbrain-desktop" data-widget-id="AR_2"></div>
+        <div className="OUTBRAIN outbrain-mobile" data-widget-id="CRMB_2"></div>
+      </aside>
+          )}
             <h2 className="text-xl md:text-3xl font-bold text-black mb-2">
               {post.title}
             </h2>
@@ -130,7 +136,12 @@ const AuthorPage = async ({ params }: { params: Promise<{ authorName: string }> 
   </div>
 
   {/* Right Column – Trending Sidebar */}
-  <div className="w-full lg:w-[350px] h-fit sticky top-32 self-start bg-white rounded-xl shadow-lg px-6 py-6">
+  <div className="w-full lg:w-[350px] h-fit bg-white rounded-xl shadow-lg px-6 py-6">
+
+    <aside className="max-w-7xl  mx-auto">
+        <div className="OUTBRAIN outbrain-desktop" data-widget-id="SB_1"></div>
+      </aside>
+
     <h2 className="text-black text-2xl font-bold mb-6 border-b pb-2 border-gray-300">
       Other Authors To Explore
     </h2>
@@ -142,6 +153,7 @@ const AuthorPage = async ({ params }: { params: Promise<{ authorName: string }> 
           href={`/post/${post.title.replace(/[^A-Za-z0-9]+/g, "-")}`}
           passHref
         >
+       
           
             <div className="bg-gray-100 mb-4 rounded-lg shadow-sm p-3">
               <Post3
@@ -157,6 +169,13 @@ const AuthorPage = async ({ params }: { params: Promise<{ authorName: string }> 
     </div>
   </div>
 </div>
+
+      <aside className="max-w-7xl mt-30 mx-auto">
+        <div className="OUTBRAIN outbrain-desktop" data-widget-id="AR_1"></div>
+        <div className="OUTBRAIN outbrain-mobile" data-widget-id="CRMB_1"></div>
+      </aside>
+
+      <Outbrain/>
 
 
     </div>

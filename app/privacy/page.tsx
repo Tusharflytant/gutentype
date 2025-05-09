@@ -1,5 +1,6 @@
 import React from 'react'
 import { Metadata } from "next";
+import Outbrain from '@/components/ads/outbrain';
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -12,9 +13,14 @@ const PrivacyPolicy = () => {
       <header className="bg-gray-100 text-gray-800 py-12 text-center">
         <h1 className="text-3xl text-black font-medium mb-4">Privacy Policy</h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Learn how gutentype collects, uses, and protects your personal information.
+          Learn how LegalClaims collects, uses, and protects your personal information.
         </p>
       </header>
+
+       <aside className="max-w-7xl mb-10  mt-20 mx-auto">
+        <div className="OUTBRAIN outbrain-desktop" data-widget-id="AR_2"></div>
+        <div className="OUTBRAIN outbrain-mobile" data-widget-id="CRMB_2"></div>
+      </aside>
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-6 py-16 space-y-12">
@@ -22,7 +28,7 @@ const PrivacyPolicy = () => {
         <section className="bg-white p-8 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold text-black mb-4">Your Privacy Matters</h2>
           <p className="text-lg text-gray-700 mb-4">
-            gutentype is committed to protecting your privacy. This policy explains what information we collect, how we use it, and the choices you have. We are transparent about our practices and dedicated to safeguarding your data.
+            LegalClaims is committed to protecting your privacy. This policy explains what information we collect, how we use it, and the choices you have. We are transparent about our practices and dedicated to safeguarding your data.
           </p>
           <p className="text-lg text-gray-700">
             By using our website, you agree to the collection and use of information in accordance with this policy.
@@ -79,6 +85,14 @@ const PrivacyPolicy = () => {
           </p>
         </section>
       </main>
+
+            <aside className="max-w-7xl mt-30 mx-auto">
+        <div className="OUTBRAIN outbrain-desktop" data-widget-id="AR_1"></div>
+        <div className="OUTBRAIN outbrain-mobile" data-widget-id="CRMB_1"></div>
+      </aside>
+
+      <Outbrain/>
+      
     </div>
   );
 };

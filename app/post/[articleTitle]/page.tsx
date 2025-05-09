@@ -2,19 +2,13 @@
 import Image from "next/image";
 import Posts from "@/components/Posts";
 import Link from "next/link";
-
 import allArticles from "@/constants/all";
 import CreationDate from "@/components/Date";
 import Breadcrumb from '@/components/Breadcrumb';
 import Newsletter from "@/components/Newsletter";
 import React from "react";
+import Outbrain from "@/components/ads/outbrain";
 
-
-// Yeh function ab 1029 se 1124 ke beech ek random image pick karega
-const getRandomImage = () => {
-  const randomNumber = Math.floor(Math.random() * (1050 - 1029 + 1)) + 1029; // 1029 to 1050
-  return `/articles/${randomNumber}.jpg`;
-};
 
 
 function getRandomArticles(articles: TArticle[], count: number) {
@@ -141,14 +135,24 @@ const PostPage = async ({
           
 
           
-
-          <div className="text-black/85 tracking-normal mx-auto font-light mt-6 text-lg leading-relaxed space-y-4 max-w-3xl">
+          <div className="flex flex-col xl:flex-row">
+          <div className="text-black/85 tracking-normal mx-auto font-light mt-6 text-lg  leading-relaxed space-y-4 max-w-3xl">
             {article.contents.map((content, index) => {
               const isHeading = content.includes("***");
               if (isHeading) headingCount++;
 
               return (
                 <React.Fragment key={index}>
+
+                     {index === 2  &&(
+                             <aside className="max-w-7xl mt-30 mx-auto">
+       <div className="OUTBRAIN outbrain-desktop" data-widget-id="AR_2"></div>
+      <div className="OUTBRAIN outbrain-mobile" data-widget-id="CRMB_2"></div>
+      </aside>
+                  )}
+
+
+
             {headingCount === 3 && isHeading && (
   <div className="mt-16 mb-14 rounded-2xl bg-gray-50 p-4 ">
     <div className="border-t border-gray-300 mb-6" />
@@ -197,8 +201,8 @@ const PostPage = async ({
                               <Image
                                 src={`/articles/${item.imgUrl}`}
                                 alt={item.title}
-                                width={100}
-                                height={80}
+                                width={1000}
+                                height={1000}
                                 className="rounded-md object-cover w-[100px] h-[80px] shrink-0"
                               />
                               <div className="text-left">
@@ -214,20 +218,11 @@ const PostPage = async ({
                       </div>
                     </div>
                   )}
+               
 
-               {(index === 15 || index === article.contents.length - 2) && (
-                 <div className=" flex justify-center">
-                   <Image
-                     src={getRandomImage()}
-                     alt="Random Feature"
-                     width={1000}
-                     height={600}
-                     className=" object-cover w-full max-w-[1200px] h-[500px]"
-                   />
-                 </div>
-               )}
+            
 
-                  {/\.(jpg)$/i.test(content) ? (
+                  {/\.(webp)$/i.test(content) ? (
                     <Image
                       width={600}
                       height={400}
@@ -245,6 +240,14 @@ const PostPage = async ({
                 </React.Fragment>
               );
             })}
+          </div>
+
+          <div>
+              <aside className="max-w-7xl lg:ml-10  mt-10 mx-auto">
+        <div className="OUTBRAIN outbrain-desktop" data-widget-id="SB_1"></div>
+      </aside>
+          </div>
+         
           </div>
         </div>
 
@@ -331,6 +334,14 @@ const PostPage = async ({
           ))}
         </div>
       </div>
+
+            <aside className="max-w-7xl mt-30 mx-auto">
+        <div className="OUTBRAIN outbrain-desktop" data-widget-id="AR_1"></div>
+        <div className="OUTBRAIN outbrain-mobile" data-widget-id="CRMB_1"></div>
+      </aside>
+
+      <Outbrain/>
+
     </div>
   );
 };

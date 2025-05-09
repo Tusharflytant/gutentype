@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Outbrain from "@/components/ads/outbrain";
 
 
 interface FormData {
@@ -70,11 +71,17 @@ const Contact: React.FC = () => {
     <div className="bg-[#fdfcfc] mt-40 text-gray-800 min-h-screen">
       {/* Header */}
       <header className="bg-gray-100 text-gray-800 py-12 text-center">
-        <h1 className="text-3xl text-black font-medium mb-4">Contact Gutentype</h1>
+        <h1 className="text-3xl text-black font-medium mb-4">Contact LegalClaims</h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
         Reach out with questions, feedback, or just to say hello — we’d love to hear from you.
         </p>
       </header>
+
+      <aside className="max-w-7xl mb-10  mt-20 mx-auto">
+        <div className="OUTBRAIN outbrain-desktop" data-widget-id="AR_2"></div>
+        <div className="OUTBRAIN outbrain-mobile" data-widget-id="CRMB_2"></div>
+      </aside>
+      
 
       {/* Main Content */}
       <main className="max-w-5xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-10">
@@ -135,14 +142,20 @@ const Contact: React.FC = () => {
         {/* Contact Info */}
         <section className="bg-white p-8 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold text-black mb-6">Contact Information</h2>
-          <p className="text-lg text-gray-700 mb-4">
-            <strong>Address:</strong> New York, Market City, NY 10211
-          </p>
+        
           <p className="text-lg text-gray-700">
-            <strong>Email:</strong> support@gutentype.com
+            <strong>Email:</strong> contact@LegalClaims.com
           </p>
         </section>
       </main>
+
+            <aside className="max-w-7xl mt-30 mx-auto">
+        <div className="OUTBRAIN outbrain-desktop" data-widget-id="AR_1"></div>
+        <div className="OUTBRAIN outbrain-mobile" data-widget-id="CRMB_1"></div>
+      </aside>
+
+      <Outbrain/>
+
     </div>
   );
 };

@@ -1,10 +1,11 @@
 import React from 'react'
 import { Metadata } from "next";
+import Outbrain from '@/components/ads/outbrain';
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Learn more about gutentype and what we do.",
-  keywords: ["Stock Market", "About", "Trading", "ETFS", "Finance"],
+  description: "Learn more about LegalClaims and what we do.",
+  keywords: ["Personal Injury", "Class Action Lawsuits", "Medical Claims", "Consumer Protection", "Legal Services"],
 };
 
 const About = () => {
@@ -12,11 +13,17 @@ const About = () => {
     <div className="mt-40 text-gray-900 min-h-screen">
       {/* Header */}
       <header className="bg-gray-100 text-gray-800 py-12 text-center">
-        <h1 className="text-3xl text-black font-medium mb-4">About gutentype</h1>
+        <h1 className="text-3xl text-black font-medium mb-4">About LegalClaims</h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Your trusted source for ETF insights, stock trading strategies, and financial news.
+          Your trusted source for personal injury, class action lawsuits, medical claims, and consumer protection legal insights.
         </p>
       </header>
+
+      <aside className="max-w-7xl mb-10  mt-20 mx-auto">
+        <div className="OUTBRAIN outbrain-desktop" data-widget-id="AR_2"></div>
+        <div className="OUTBRAIN outbrain-mobile" data-widget-id="CRMB_2"></div>
+      </aside>
+      
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-6 py-16 space-y-12">
@@ -24,11 +31,10 @@ const About = () => {
         <section className="bg-white p-8 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold text-black mb-4">Who We Are</h2>
           <p className="text-lg text-gray-700 mb-4">
-            gutentype is a digital publication focused on delivering accurate, timely, and insightful content about the financial markets.
-            Founded by a team of analysts, traders, and financial writers, we are committed to simplifying the complexities of finance for everyday investors and enthusiasts.
+            LegalClaims is a digital platform focused on providing expert insights and information on legal issues that impact individuals. We specialize in personal injury, class action lawsuits, medical claims, and consumer protection rights.
           </p>
           <p className="text-lg text-gray-700">
-            We believe in the power of informed investing. Our goal is to equip our readers with the knowledge they need to navigate a constantly evolving economic landscape with confidence and clarity.
+            Our team of legal experts is dedicated to offering accessible and clear content to help everyday people understand their legal rights and navigate the legal system effectively.
           </p>
         </section>
 
@@ -36,10 +42,10 @@ const About = () => {
         <section className="bg-white p-8 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold text-black mb-4">Our Mission</h2>
           <p className="text-lg text-gray-700 mb-4">
-            At gutentype, our mission is to democratize access to quality financial information. We strive to bridge the gap between Wall Street and the everyday investor by delivering well-researched, data-driven articles and analysis that help our readers make smarter financial decisions.
+            At LegalClaims, our mission is to empower individuals by providing the legal knowledge they need to protect their rights. We offer well-researched articles and expert commentary on a wide range of legal topics, including personal injury, medical claims, and class action lawsuits.
           </p>
           <p className="text-lg text-gray-700">
-            We maintain editorial independence, uphold journalistic integrity, and focus on clarity, transparency, and real-world value in everything we publish.
+            We are committed to maintaining editorial integrity and ensuring that all information is presented clearly and transparently, helping our readers make informed decisions.
           </p>
         </section>
 
@@ -47,11 +53,10 @@ const About = () => {
         <section className="bg-white p-8 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold text-black mb-4">What We Cover</h2>
           <ul className="list-disc list-inside text-lg text-gray-700 space-y-3 mt-2">
-            <li><strong>ETFs:</strong> In-depth analysis of exchange-traded funds, including sector-specific trends, fund performance, and risk assessment.</li>
-            <li><strong>Stock Trading:</strong> Daily market recaps, technical analysis, breakout watchlists, and strategy breakdowns for both beginners and active traders.</li>
-            <li><strong>Finance News:</strong> Breaking stories and macroeconomic developments that shape market sentiment and impact investment decisions.</li>
-            <li><strong>Education:</strong> Step-by-step guides, terminology explainers, and portfolio-building basics for retail investors.</li>
-            <li><strong>Opinion & Commentary:</strong> Insights from industry professionals, economic outlooks, and thoughtful commentary on current events.</li>
+            <li><strong>Personal Injury:</strong> Legal guidance on personal injury claims, from accidents to long-term injury cases.</li>
+            <li><strong>Class Action Lawsuits:</strong> Insights on group lawsuits, eligibility, and how they can help victims of large-scale issues.</li>
+            <li><strong>Medical Claims:</strong> Information about filing medical claims, understanding patient rights, and dealing with insurance companies.</li>
+            <li><strong>Consumer Protection:</strong> Resources to help consumers understand their rights and take action against unfair business practices.</li>
           </ul>
         </section>
 
@@ -59,22 +64,29 @@ const About = () => {
         <section className="bg-white p-8 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold text-black mb-4">Our Editorial Approach</h2>
           <p className="text-lg text-gray-700 mb-4">
-            Every piece of content published on gutentype goes through a rigorous editorial process to ensure accuracy, clarity, and fairness. Our writers adhere to strict standards and verify information using reputable sources.
+            Every article on LegalClaims undergoes thorough fact-checking to ensure we provide accurate, clear, and reliable legal information. Our team of legal writers ensures that all content is accessible to people without a legal background.
           </p>
           <p className="text-lg text-gray-700">
-            We avoid hype and sensationalism — our focus is on delivering value. Whether it’s an ETF breakdown or a market opinion, we back our work with data, charts, and historical context.
+            We focus on offering practical insights and advice backed by expert opinion, avoiding legal jargon and keeping our content understandable for everyone.
           </p>
         </section>
 
         {/* Our Readers */}
         <section className="bg-white p-8 rounded-lg shadow-md">
-          <h2 className="text-2xl font-semibold text-black mb-4">Who Reads gutentype?</h2>
+          <h2 className="text-2xl font-semibold text-black mb-4">Who Reads LegalClaims?</h2>
           <p className="text-lg text-gray-700">
-            Our audience includes individual investors, active traders, financial advisors, and anyone seeking to better understand how the markets work.
-            Whether you are just getting started with ETFs or optimizing your trading strategy, gutentype delivers insights tailored to your level.
+            LegalClaims is for anyone seeking to learn more about their legal rights. Whether you’ve been affected by personal injury, are involved in a class action lawsuit, or need help navigating medical claims or consumer protection, our platform provides the information you need.
           </p>
         </section>
       </main>
+
+            <aside className="max-w-7xl mt-30 mx-auto">
+        <div className="OUTBRAIN outbrain-desktop" data-widget-id="AR_1"></div>
+        <div className="OUTBRAIN outbrain-mobile" data-widget-id="CRMB_1"></div>
+      </aside>
+
+      <Outbrain/>
+
     </div>
   );
 };

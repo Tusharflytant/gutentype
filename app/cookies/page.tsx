@@ -1,5 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
+import Outbrain from "@/components/ads/outbrain";
 
 export const metadata: Metadata = {
   title: "Cookies Policy",
@@ -12,9 +13,15 @@ const CookiesPolicy = () => {
       <header className="bg-gray-100 text-gray-800 py-12 text-center">
         <h1 className="text-3xl text-black font-medium mb-4">Cookies Policy</h1>
         <p className="text-lg text-gray-600">
-          Learn how gutentype uses cookies and similar technologies to enhance your browsing experience.
+          Learn how LegalClaims uses cookies and similar technologies to enhance your browsing experience.
         </p>
       </header>
+
+      <aside className="max-w-7xl mb-10  mt-20 mx-auto">
+        <div className="OUTBRAIN outbrain-desktop" data-widget-id="AR_2"></div>
+        <div className="OUTBRAIN outbrain-mobile" data-widget-id="CRMB_2"></div>
+      </aside>
+      
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-6 py-16 space-y-12">
@@ -22,7 +29,7 @@ const CookiesPolicy = () => {
         <section className="bg-white p-8 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold text-black mb-4">What Are Cookies?</h2>
           <p className="text-lg text-gray-700 mb-4">
-            Cookies are small data files stored on your device when you visit websites. They help improve functionality, analyze usage, and deliver personalized content. gutentype uses cookies to enhance performance and tailor your experience.
+            Cookies are small data files stored on your device when you visit websites. They help improve functionality, analyze usage, and deliver personalized content. LegalClaims uses cookies to enhance performance and tailor your experience.
           </p>
           <p className="text-lg text-gray-700">
             Some cookies are essential for the operation of our website, while others help us understand user behavior and improve our content.
@@ -64,10 +71,18 @@ const CookiesPolicy = () => {
         <section className="bg-white p-8 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold text-black mb-4">Changes to This Policy</h2>
           <p className="text-lg text-gray-700">
-            gutentype may update this Cookies Policy from time to time. We encourage you to review this page periodically for any changes. Your continued use of our site signifies your agreement to the updated terms.
+            LegalClaims may update this Cookies Policy from time to time. We encourage you to review this page periodically for any changes. Your continued use of our site signifies your agreement to the updated terms.
           </p>
         </section>
       </main>
+
+            <aside className="max-w-7xl mt-30 mx-auto">
+        <div className="OUTBRAIN outbrain-desktop" data-widget-id="AR_1"></div>
+        <div className="OUTBRAIN outbrain-mobile" data-widget-id="CRMB_1"></div>
+      </aside>
+
+      <Outbrain/>
+
     </div>
   );
 };

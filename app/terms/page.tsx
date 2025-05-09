@@ -1,5 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
+import Outbrain from "@/components/ads/outbrain";
 
 export const metadata: Metadata = {
   title: "Terms and Conditions",
@@ -15,6 +16,12 @@ const TermsAndConditions = () => {
           Please take a moment to review our terms and conditions before using our services.
         </p>
       </header>
+
+      <aside className="max-w-7xl mb-10  mt-20 mx-auto">
+        <div className="OUTBRAIN outbrain-desktop" data-widget-id="AR_2"></div>
+        <div className="OUTBRAIN outbrain-mobile" data-widget-id="CRMB_2"></div>
+      </aside>
+      
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-6 py-16 space-y-12">
@@ -81,6 +88,14 @@ const TermsAndConditions = () => {
         </section>
 
       </main>
+
+            <aside className="max-w-7xl mt-30 mx-auto">
+        <div className="OUTBRAIN outbrain-desktop" data-widget-id="AR_1"></div>
+        <div className="OUTBRAIN outbrain-mobile" data-widget-id="CRMB_1"></div>
+      </aside>
+
+      <Outbrain/>
+      
     </div>
   );
 };
